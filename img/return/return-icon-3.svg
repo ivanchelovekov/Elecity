@@ -1,0 +1,16 @@
+<svg width="35.000000" height="35.000000" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip3001_46">
+			<rect id="curved-arrow 1" width="35.000000" height="35.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="curved-arrow 1" width="35.000000" height="35.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip3001_46)">
+		<path id="Vector" d="M16.2217 3.83557L18.481 1.57666L16.9053 0L12.1108 4.79456L16.9053 9.58899L18.4819 8.01245L16.564 6.09351C23.9077 6.91785 29.1924 13.5393 28.3682 20.8828C27.6099 27.6332 21.9141 32.7446 15.1216 32.77C14.4341 32.77 13.748 32.7178 13.0688 32.6139L12.7339 34.8182C13.5244 34.939 14.3223 34.9996 15.1216 35C23.7378 35.0074 30.7285 28.0288 30.7363 19.4125C30.7432 11.2128 24.4019 4.40686 16.2217 3.83557Z" fill="#437FC8" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M4.26416 30.6034C4.83936 31.161 5.45605 31.6735 6.10938 32.1366L7.39844 30.3158C6.83838 29.9196 6.30908 29.4808 5.81641 29.0034L4.26416 30.6034Z" fill="#437FC8" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M8.16895 33.371C8.88623 33.7275 9.62988 34.0283 10.3936 34.2708L11.0625 32.1456C10.4087 31.9373 9.77148 31.6793 9.15674 31.374L8.16895 33.371Z" fill="#437FC8" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

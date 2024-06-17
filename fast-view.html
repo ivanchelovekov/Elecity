@@ -1,0 +1,117 @@
+<!DOCTYPE html><html lang="ru" class="page"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="favicon.ico" type="image/x-icon"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="theme-color" content="#111111"><title>Elecity</title><link rel="preload" href="fonts/BasisGrotesquePro-Medium.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/BasisGrotesquePro-Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/Montserrat-Light.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"><link href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css" rel="stylesheet"><link rel="stylesheet" href="css/vendor.css"><link rel="stylesheet" href="css/main.css"><!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> --><script src="https://cdn.jsdelivr.net/npm/nouislider@15.7.1/dist/nouislider.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
+      // Get references to all custom-select elements
+      var customSelects = document.querySelectorAll('.custom-select');
+
+      // Function to toggle options container visibility and add/remove 'active' class
+      function toggleOptions(customSelect) {
+        customSelect.classList.toggle('active');
+        var optionsContainer = customSelect.querySelector('.options-container');
+        optionsContainer.classList.toggle('show');
+      }
+
+      // Function to select an option
+      function selectOption(customSelect, option) {
+        var selectedOption = customSelect.querySelector('.selected-option');
+        selectedOption.textContent = option;
+        toggleOptions(customSelect); // Close options container after selecting an option
+      }
+
+      // Event listener for clicks outside the custom select
+      document.addEventListener('click', function (event) {
+        customSelects.forEach(function (customSelect) {
+          var isClickInsideSelect = customSelect.contains(event.target);
+          var optionsContainer = customSelect.querySelector('.options-container');
+          var isClickInsideOptions = optionsContainer.contains(event.target);
+
+          if (!isClickInsideSelect && !isClickInsideOptions) {
+            customSelect.classList.remove('active');
+            optionsContainer.classList.remove('show');
+          }
+        });
+      });
+
+      // Attach click events to each custom select
+      customSelects.forEach(function (customSelect) {
+        var selectWrapper = customSelect.querySelector('.select-wrapper');
+        selectWrapper.addEventListener('click', function () {
+          toggleOptions(customSelect);
+        });
+
+        // Attach click event to each option
+        var options = customSelect.querySelectorAll('.option');
+        options.forEach(function (option) {
+          option.addEventListener('click', function () {
+            var selectedText = option.textContent;
+            selectOption(customSelect, selectedText);
+          });
+        });
+      });
+    });</script><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script><script>function enableEdit(fieldId) {
+      var field = document.getElementById(fieldId);
+      field.removeAttribute('readonly');
+      field.focus(); // Optional: Automatically focus on the field after enabling editing
+    }
+
+    function saveChanges() {
+      // Save user data changes
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var address = document.getElementById('address').value;
+      var phone = document.getElementById('phone').value;
+
+      // Save password changes
+      var oldPassword = document.getElementById('oldPassword').value;
+      var newPassword = document.getElementById('newPassword').value;
+
+      // Here you can perform actions to save all sets of changes, like sending them to a server or storing them locally
+
+      alert("Changes saved successfully!");
+    }</script><script>function togglePasswordVisibility(inputId) {
+      var passwordInput = document.getElementById(inputId);
+      var toggleButton = document.querySelector(`#${inputId} + .toggle-password`);
+
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        toggleButton.textContent = "Hide";
+      } else {
+        passwordInput.type = "password";
+        toggleButton.textContent = "Show";
+      }
+    }</script><script>function toggleDropdown(button) {
+      var dropdownContent = button.nextElementSibling;
+      dropdownContent.classList.toggle("show");
+      button.classList.toggle("active");
+    }
+
+    function closeDropdowns(event) {
+      var dropdownContainers = document.querySelectorAll('.dropdown');
+      dropdownContainers.forEach(function (container) {
+        if (!container.contains(event.target)) {
+          var dropdownContent = container.querySelector('.dropdown-content');
+          var button = container.querySelector('.dropbtn');
+          if (dropdownContent.classList.contains('show')) {
+            dropdownContent.classList.remove('show');
+            button.classList.remove('active');
+          }
+        }
+      });
+    }
+
+    var dropdownButtons = document.querySelectorAll('.dropbtn');
+    dropdownButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        toggleDropdown(this);
+      });
+    });
+
+    window.addEventListener('click', closeDropdowns);</script><script>function toggleActive(element) {
+      // Remove 'active' class from all list items
+      var allItems = document.querySelectorAll('.all-category__item');
+      allItems.forEach(function (item) {
+        item.classList.remove('active');
+      });
+
+      // Add 'active' class to the clicked list item
+      var listItem = element.parentNode;
+      listItem.classList.add('active');
+    }</script><script defer="defer" src="js/main.js"></script></head><body class="page__body"><div class="site-container"><main class="main"><div class="full-item__bg"><section class="full-item"><div class="container-narrow"><div class="full-item__wrapper"><div class="full-item__header"><div class="full-item__header-top"><div class="full-item__info-a"><span class="catalog-card__discount">-20%</span> <span class="catalog-card__new">Новинка</span> <span class="catalog-card__present">Подарок</span></div><div class="full-item__header-top__right"><label class="custom-checkbox"><input type="checkbox" class="custom-checkbox__field"> <span class="custom-checkbox__content">Добавить к сравнению</span></label> <span class="full-item__code-item">Код товара: 54567474</span></div></div><h1 class="full-item__title">Холодильник BEKO RCSK 250M00 W</h1><div class="full-item__compare"><div class="full-item__info-b"><div class="catalog-card__rating"><img loading="lazy" src="img/catalog-item/rating-star-active.svg" class="image" width="14" height="14" alt="1"> <img loading="lazy" src="img/catalog-item/rating-star-active.svg" class="image" width="14" height="14" alt="2"> <img loading="lazy" src="img/catalog-item/rating-star-active.svg" class="image" width="14" height="14" alt="3"> <img loading="lazy" src="img/catalog-item/rating-star-active.svg" class="image" width="14" height="14" alt="4"> <img loading="lazy" src="img/catalog-item/rating-star.svg" class="image" width="14" height="14" alt="5"></div><div class="catalog-card__comments"><a href="" class="catalog-card__comments-link">10</a></div></div><div class="full-item__info"><div class="full-item__info-c">Купили более 100 раз</div><div class="full-item__info-d"><span class="full-item__in-stock">В наличии</span></div></div></div></div><div class="full-item__content"><div class="full-item__slider full-slider"><div class="full-slider__mini"><div class="full-slider__mini-item"><img src="img/full-item/item-slider-mini-1.jpg" class="full-slider__mini-img" alt="1"></div><div class="full-slider__mini-item"><img src="img/full-item/item-slider-mini-1.jpg" class="full-slider__mini-img" alt="2"></div><div class="full-slider__mini-item"><img src="img/full-item/item-slider-mini-1.jpg" class="full-slider__mini-img" alt="3"></div><div class="full-slider__mini-item"><img src="img/full-item/item-slider-mini-1.jpg" class="full-slider__mini-img" alt="3"></div><div class="full-slider__mini-item"><img src="img/full-item/item-slider-mini-1.jpg" class="full-slider__mini-img" alt="3"></div></div><div class="full-slider__full"><div class="full-slider__full-item"><img src="img/full-item/item-slider-1.jpg" class="full-slider__full-img" alt="1"></div><div class="full-slider__full-item"><img src="img/full-item/item-slider-1.jpg" class="full-slider__full-img" alt="2"></div><div class="full-slider__full-item"><img src="img/full-item/item-slider-1.jpg" class="full-slider__full-img" alt="3"></div><div class="full-slider__full-item"><img src="img/full-item/item-slider-1.jpg" class="full-slider__full-img" alt="3"></div><div class="full-slider__full-item"><img src="img/full-item/item-slider-1.jpg" class="full-slider__full-img" alt="3"></div></div></div><div class="full-item__descr"><ul class="list-reset full-item__descr-list"><li class="full-item__descr-item"><div class="full-item__descr-left">Бренд</div><div class="full-item__descr-right">BEKO</div></li><li class="full-item__descr-item"><div class="full-item__descr-left">Морозильная камера</div><div class="full-item__descr-right">снизу</div></li><li class="full-item__descr-item"><div class="full-item__descr-left">Цвет / Материал покрытия</div><div class="full-item__descr-right">белый / металл</div></li><li class="full-item__descr-item"><div class="full-item__descr-left">Габариты</div><div class="full-item__descr-right">54×60×158 см</div></li><li class="full-item__descr-item"><div class="full-item__descr-left">Энергопотребление</div><div class="full-item__descr-right">класс A (301 кВтч/год)</div></li><li class="full-item__descr-item"><div class="full-item__descr-left">Количество камер</div><div class="full-item__descr-right">2</div></li><li class="full-item__descr-item"><div class="full-item__descr-left">Количество дверей</div><div class="full-item__descr-right">2</div></li><li class="full-item__descr-item"><div class="full-item__descr-left">Индикация</div><div class="full-item__descr-right">открытой двери–звуковая</div></li></ul><div class="full-item__all-feature"><a class="full-item__all-feature-link" href="#">Все характеристики</a></div><div class="full-item__payment">Способ оплаты:<br><b>Уточняйте у менеджера</b></div><div class="full-item__descr-image"><a class="full-item__descr-link" href="#"><img src="img/full-item/item-brand-logo.png" class="full-item__descr-img" alt="Beko"></a></div><div class="full-item__details"><div class="full-item__details-wrapper"><div class="full-item__price-card full-item__card"><div class="full-item__price"><div class="full-item__new-price">14 300 ₽</div><div class="full-item__old-price"><del>18 000 ₽</del></div></div><div class="full-item__buy"><a class="full-item__buy-click" uk-toggle="target: #buyModal" href="#">Купить в 1 клик</a> <a class="full-item__buy-link" href="#">Добавить в корзину</a></div></div></div></div></div></div><div class="full-item__more"><a class="full-item__more-link" href="full-item-page.html">Больше информации о товаре</a></div></div></div></section></div></main></div></body></html>
